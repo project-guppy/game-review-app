@@ -1,5 +1,18 @@
-
-
+.guppyNav{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    height: 5vh;
+    position: sticky;
+    display: inline;
+}
+.guppyLogo{
+    width: 10vh;
+}
 .navbarItems{
     list-style: none;
+}
+.navbarItems li{
+    display: inline;
+    float: right;
 }
