@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/navbar";
 import Ratings from "./components/starRatings";
+import Grid from "./components/grid";
 
 function App() {
   return (
@@ -9,6 +10,8 @@ function App() {
       <div>
         <Navbar />
       </div>
+      <div className="grid"></div>
+      <Grid />
 
     </div>
   );
