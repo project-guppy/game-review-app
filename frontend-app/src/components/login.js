@@ -1,3 +1,4 @@
+import React from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
 
 const layout = {
@@ -15,7 +16,7 @@ const tailLayout = {
     },
 };
 
-const Demo = () => {
+const LogIn = () => {
     const onFinish = (values) => {
         console.log('Success:', values);
     };
@@ -72,4 +73,4 @@ const Demo = () => {
         </Form>
     );
 };
-export default Demo;
+export default LogIn;
