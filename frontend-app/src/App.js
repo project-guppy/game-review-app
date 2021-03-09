@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import LogIn from "./components/login";
 import Home from "./components/home";
 import SignUp from "./components/signup";
+import About from "./components/about";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route exact path = "/" component = {Home} />
             <Route exact path = "/login" component = {LogIn} />
             <Route exact path = "/signup" component = {SignUp} />
+            <Route exact path = "/About" component = {About} />
           </Switch>
         </BrowserRouter>     
     </div>

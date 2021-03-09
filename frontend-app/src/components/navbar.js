@@ -7,7 +7,7 @@ const guppyNavbar = () => {
         <nav className="guppyNav">
             <img className="guppyLogo" src={Guppy} alt="Guppy"></img>
             <ul className="navbarItems">
-                <li>About</li>
+                <li><Link to="/about">About</Link></li>
                 <li><Link to="/login">Log In</Link></li>
                 <li><Link to="/signup">Sign Up</Link></li>
             </ul>
