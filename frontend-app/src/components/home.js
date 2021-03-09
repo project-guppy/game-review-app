@@ -1,6 +1,12 @@
+import Grid from "./grid";
+
 const HomePage = () => {
     return(
-        <h1>test</h1>
+        <div className="homePageDiv">
+            <div className="grid">
+                <Grid />
+            </div>
+        </div>
     )
 }
 export default HomePage;
