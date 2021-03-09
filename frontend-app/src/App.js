@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from "./components/navbar";
 import LogIn from "./components/login";
 import Home from "./components/home";
+import Grid from "./components/grid";
 
 function App() {
   return (
@@ -16,8 +17,12 @@ function App() {
             <Route exact path = "/login" component = {LogIn} />
           </Switch>
         </BrowserRouter> 
-
-
+    
+      <div className="navigationBar">
+        <Navbar />
+      </div>
+      <div className="grid">
+        <Grid />
       </div>
     </div>
   );
