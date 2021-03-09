@@ -9,6 +9,7 @@ const guppyNavbar = () => {
 
             <div className="navbarList">
                 <ul className="navbarItems">
+                    <li>About</li>
                     <li>Log In</li>
                     <li>Sign Up</li>
                 </ul>
