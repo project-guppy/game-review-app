@@ -4,15 +4,27 @@
     top: 0;
     height: 5vh;
     position: sticky;
-    display: inline;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .guppyLogo{
-    width: 10vh;
+    width: 12vh;
+    padding: 2vh;
+}
+.logo{
+    width: 50%;
+}
+.navList{
+   width: 50%;
 }
 .navbarItems{
     list-style: none;
+    padding-right: 5vh;
 }
 .navbarItems li{
     display: inline;
     float: right;
+    padding-left: 2vh;
+    padding-right: 2vh;
 }
