@@ -1,3 +1,4 @@
+import "./navbar.css";
 import Guppy from "./images/fish.svg";
 
 const guppyNavbar = () => {
