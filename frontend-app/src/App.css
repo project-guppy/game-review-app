@@ -1,6 +1,9 @@
 @import '~antd/dist/antd.css';
 
+.App{
+    height: 90vh;
+}
+
 .appNavbar{
     display: block;
-    padding-bottom: 5vh;
 }
