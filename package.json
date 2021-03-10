@@ -5,5 +5,27 @@
     "express": "^4.17.1",
     "mongoose": "^5.11.19",
     "node-fetch": "^2.6.1"
-  }
+  },
+  "name": "game-review-app",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/project-guppy/game-review-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/project-guppy/game-review-app/issues"
+  },
+  "homepage": "https://github.com/project-guppy/game-review-app#readme"
 }
