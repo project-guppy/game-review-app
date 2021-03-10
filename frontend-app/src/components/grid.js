@@ -1,7 +1,7 @@
 import { Row, Col } from 'antd';
 const guppyGrid = () =>{
     return(
-            <>
+            <div>
               <Row>
                 <Col span={24}>col</Col>
               </Row>
@@ -20,7 +20,7 @@ const guppyGrid = () =>{
                 <Col span={6}>col-6</Col>
                 <Col span={6}>col-6</Col>
               </Row>
-            </>
+            </div>
           );
 }
 
