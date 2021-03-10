@@ -12,8 +12,7 @@
     align-items: center;
 }
 .guppyLogo{
-    width: 12vh;
-    padding: 2vh;
+    width: 10vh;
 }
 .logo{
     width: 50%;
@@ -29,5 +28,6 @@
     display: inline;
     float: right;
     padding-left: 2vh;
-    padding-right: 2vh;
+    padding-right: 4vh;
+    font-size: larger;
 }
