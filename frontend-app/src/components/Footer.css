@@ -1,0 +1,17 @@
+.footerWrapper{
+    bottom: 0;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footerGits{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.footerGits a{
+    display: flex;
+    font-size: 3vh;
+    padding: 3vh;
+}
