@@ -1,15 +1,6 @@
 const fetch = require("node-fetch");
 require("dotenv").config();
 
-const getVideoGameData = async (numberOfEntries) => {
-  fetch(url, {
-    method: 'POST',
-    headers: {
-
-    }
-  }
-};
-        
 const fs = require("fs");
 require("dotenv").config();
 require("fs");
@@ -78,11 +69,13 @@ const getVideoGameData = async (numberOfEntries) => {
 const writeToFile = async () => {
   const data = await getVideoGameData();
   const result = JSON.stringify(
-    data.map((game) => {
-      return {
-        ...game,
-      };
-    }),
+    {
+      data: data.map((game) => {
+        return {
+          ...game,
+        };
+      }),
+    },
     null,
     2
   );
