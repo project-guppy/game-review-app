@@ -1,10 +1,16 @@
 import React from "react";
 
-import { Card, Image, Descriptions, Rate } from "antd";
+import { Card, Image, Descriptions, Rate, List } from "antd";
 
 import "./GameDetailPage.css";
+import Review from "./Review";
+import ReviewCompose from "./ReviewCompose";
 
 const GameDetailPage = ({ game }) => {
+  const reviews = game.reviews.map((review) => (
+    <Review key={review.id} review={review} />
+  ));
+
   return (
     <div className="gameDetailPageWrapper">
       <Card className>
@@ -26,6 +32,24 @@ const GameDetailPage = ({ game }) => {
             <p>{game.summary}</p>
           </div>
         </div>
+        <List
+          className="comment-list"
+          header="Write a Review"
+          itemLayout="horizontal"
+          dataSource={[1]}
+          renderItem={() => (
+            <li>
+              <ReviewCompose />
+            </li>
+          )}
+        ></List>
+        <List
+          className="comment-list"
+          header={`${reviews.length} reviews`}
+          itemLayout="horizontal"
+          dataSource={reviews}
+          renderItem={(review) => <li>{review}</li>}
+        ></List>
       </Card>
     </div>
   );

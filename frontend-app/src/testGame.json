@@ -15,5 +15,28 @@
     }
   ],
   "summary": "BroodStar is a classic arcade shmup with roguelike elements. Battle your way through hordes of enemy creatures, collecting upgrades and fighting terrifying bosses on a quest to destroy the living planet, the BroodStar.",
-  "__v": 0
+  "__v": 0,
+  "reviews": [
+    {
+      "username": "necklacemexican",
+      "id": 234567,
+      "profilePic": "https://i.pravatar.cc/50",
+      "text": "Lorem  asdhfjsadhfjsdahfjkdn dsfh jasdkfsdf dfhaksdf hjsfhas df hskaf khjfl dfh f dsdfjhajdfhjkasdhfkj f jdfhsdjahf kjasdfh jakdfs jkdsf hakdfj adhfkjdfa hadf fjkhf jkhajdfhjadfhads",
+      "rating": 87
+    },
+    {
+      "username": "fastenvision",
+      "id": 2343567,
+      "profilePic": "https://i.pravatar.cc/50",
+      "text": "Lorem  asdhfjsadhfjsdahfjkdn dsfh jasdkfsdf dfhaksdf hjsfhas df hskaf khjfl dfh f dsdfjhajdfhjkasdhfkj f jdfhsdjahf kjasdfh jakdfs jkdsf hakdfj adhfkjdfa hadf fjkhf jkhajdfhjadfhads",
+      "rating": 50
+    },
+    {
+      "username": "crowdedbelt",
+      "id": 4234567,
+      "profilePic": "https://i.pravatar.cc/50",
+      "text": "Lorem  asdhfjsadhfjsdahfjkdn dsfh jasdkfsdf dfhaksdf hjsfhas df hskaf khjfl dfh f dsdfjhajdfhjkasdhfkj f jdfhsdjahf kjasdfh jakdfs jkdsf hakdfj adhfkjdfa hadf fjkhf jkhajdfhjadfhads",
+      "rating": 68
+    }
+  ]
 }
