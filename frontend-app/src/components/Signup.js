@@ -26,7 +26,7 @@ const SignUp = () => {
     };
 
     return (
-        <Form
+        <Form method="POST"
             {...layout}
             name="basic"
             initialValues={{
