@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
 
 const layout = {
@@ -25,8 +25,26 @@ const SignUp = () => {
         console.log('Failed:', errorInfo);
     };
 
+
+const [username, setUsername] = useState();
+const [password, setPassword] = useState();
+
+const signUpHandler = (event) => {
+    event.preventDefault();
+    console.log(username);
+    console.log(password);
+}
+
+const usernameChangeHandler = (event) => {
+    setUsername(event.target.value);
+}
+
+const passwordChangeHandler = (event) => {
+    setPassword(event.target.value);
+}
+
     return (
-        <Form method="POST"
+        <Form
             {...layout}
             name="basic"
             initialValues={{
@@ -45,7 +63,7 @@ const SignUp = () => {
                     },
                 ]}
             >
-                <Input />
+                <Input value={username} onChange={usernameChangeHandler} />
             </Form.Item>
 
             <Form.Item
@@ -58,7 +76,7 @@ const SignUp = () => {
                     },
                 ]}
             >
-                <Input.Password />
+                <Input.Password value={password} onChange={passwordChangeHandler} />
             </Form.Item>
 
             <Form.Item {...tailLayout} name="remember" valuePropName="checked">
@@ -66,9 +84,9 @@ const SignUp = () => {
             </Form.Item>
 
             <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
+                <Button onClick={signUpHandler} type="primary" htmlType="submit">
                     Submit
-          </Button>
+                </Button>
             </Form.Item>
         </Form>
     );
