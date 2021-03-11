@@ -1,6 +1,14 @@
 @import '~antd/dist/antd.css';
-.site-card-wrapper{
-    height: auto;
+.ant-card-head{
+    padding: 15px;
     width: auto;
-    border:blue;
+    height: auto;
+    display: flex;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+.ant-card-head: :hover{
+    font-style: italic;
+    color: red;
 }
