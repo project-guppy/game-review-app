@@ -29,10 +29,15 @@ const SignUp = () => {
 const [username, setUsername] = useState();
 const [password, setPassword] = useState();
 
-const signUpHandler = (event) => {
+const signUpHandler = async(event) => {
     event.preventDefault();
     console.log(username);
     console.log(password);
+    await fetch("http://localhost:3003/users/signup", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username, password})
+    })
 }
 
 const usernameChangeHandler = (event) => {
