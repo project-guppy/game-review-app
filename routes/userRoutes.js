@@ -1,14 +1,20 @@
-const router = Router();
-const GuppyUser = "./models/users.js";
+const express = require("express");
+const router = express.Router();
+const fetch = require("node-fetch");
 
 router.get("/signup", (req, res) => {
-    res.render("login");
+  res.status(200).json({message:"OK"});
 });
 
-router.post("/", (req, res) => {
-    let username = new GuppyUser({username: username});
-    username.save();
-});
+router.post("/signup", (req, res) => {
+  res.status(200).json({"username":req.body.username, "password":req.body.password});
+
+  //need to use node fetch to add the data to the database
+})
+
+module.exports = router;
+
+
 
 
 
@@ -18,15 +24,15 @@ router.post("/", (req, res) => {
 // 3. If there is a user with the same username, compare password
 // 4. Use hashing to compare password
 // 5. If password is correct, allow login.
-const checkUserLogInData = async() => {
-    const password = await fetch(GuppyUser.password);
-    const hashPassword = await bcrypt.hash(password, saltRounds);
-    const match = await bcrypt.compare(testSecondPassword, hashPassword);
+// const checkUserLogInData = async() => {
+//     const password = await fetch(GuppyUser.password);
+//     const hashPassword = await bcrypt.hash(password, saltRounds);
+//     const match = await bcrypt.compare(testSecondPassword, hashPassword);
   
-    console.log(`Do passwords match? ${match}`);
+//     console.log(`Do passwords match? ${match}`);
   
-    if (match){
-      //allow login.
-    }
-  }
-  checkUserLogInData();
+//     if (match){
+//       //allow login.
+//     }
+//   }
+//   checkUserLogInData();

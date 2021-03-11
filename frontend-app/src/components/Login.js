@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
 
 const layout = {
@@ -24,6 +24,9 @@ const LogIn = () => {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
+
+const [loginUsername, setLoginUsername] = useState();
+const [loginPassword, setLoginPassword] = useState();
 
     return (
         <Form
