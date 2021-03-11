@@ -1,0 +1,17 @@
+.gameDetailPageWrapper{
+    max-width: 900px;
+  margin: auto;
+}
+
+.gameDetailWrapper {
+  display: flex;
+
+}
+.gameDetailSide {
+}
+.gameDetailContent {
+  padding-left: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
