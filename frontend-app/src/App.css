@@ -7,3 +7,11 @@
 .appNavbar{
     display: block;
 }
+.switches{
+    display: block;
+}
+.homePageDiv{
+    display: flex;
+    
+    margin-top: 50px;
+}

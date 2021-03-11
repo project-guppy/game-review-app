@@ -15,7 +15,7 @@ function App() {
           <div className="appNavbar">
             <Navbar />
           </div>
-          
+                  
           <Switch>
             <Route exact path = "/" component = {Home} />
             <Route exact path = "/login" component = {LoginPage} />

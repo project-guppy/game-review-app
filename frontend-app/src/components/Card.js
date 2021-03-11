@@ -1,27 +1,14 @@
- import { Card, Col, Row } from 'antd';
- import './card.css'
+import { Card } from 'antd';
+import './Card.css';
+const GuppyCard = (props) => {
 
-const guppyCards =() =>{
-    return(
-  <div className="site-card-wrapper">
-    <Row gutter={16}>
-      <Col span={8}>
-        <Card title="Card title" bordered={false}>
-          Card content
-        </Card>
-      </Col>
-      <Col span={8}>
-        <Card title="Card title" bordered={false}>
-          Card content
-        </Card>
-      </Col>
-      <Col span={8}>
-        <Card title="Card title" bordered={false}>
-          Card content
-        </Card>
-      </Col>
-    </Row>
-  </div>
-    )
+  return (
+    <Card style={{ width: "300px" }} title={props.game.name}>
+      <img src={props.game.cover} alt="cover" />
+      <p>{props.game.genres}</p>
+      <p>{props.game.involved_companies}</p>
+
+    </Card>
+  )
 }
-export default guppyCards;
+export default GuppyCard;

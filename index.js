@@ -9,6 +9,7 @@ const saltRounds = 10;
 
 const gameApi = require("./routes/gameAPI.js");
 const GuppyUser = require("./models/users");
+const cors= require('cors')
 
 mongoose.connect(process.env.DATABASE_URI, {
   useNewUrlParser: true,
@@ -16,6 +17,7 @@ mongoose.connect(process.env.DATABASE_URI, {
 });
 
 const app = express();
+app.use(cors())
 
 app.use("/api/v1/games", gameApi);
 
