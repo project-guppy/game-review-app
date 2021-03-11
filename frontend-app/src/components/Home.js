@@ -1,8 +1,6 @@
 import GuppyCard from "./Card";
 import { useEffect, useState } from 'react';
 import './Home.css'
-import GuppyCarousel from "./Carousel"
-import { Carousel } from "antd";
 
 
 
@@ -14,7 +12,7 @@ const HomePage = () => {
         console.log()
         setGames(data)
     }, [])
-    const cards = games.map((game, ) => {
+    const cards = games.map((game) => {
         return (<GuppyCard key={game.id} game={ game } />
         )
     });
