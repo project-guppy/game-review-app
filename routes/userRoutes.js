@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const fetch = require("node-fetch");
+const GuppyUser = require("../models/users");
 
 router.get("/signup", (req, res) => {
   res.status(200).json({message:"OK"});
@@ -9,7 +10,14 @@ router.get("/signup", (req, res) => {
 router.post("/signup", (req, res) => {
   res.status(200).json({"username":req.body.username, "password":req.body.password});
 
-  //need to use node fetch to add the data to the database
+  GuppyUser.create({username:req.body.username, password:req.body.password}, (err, obj) => {
+    if(err){
+      console.log(err);
+      return
+    }
+    console.log(obj);
+    console.log("Success");
+  })
 })
 
 module.exports = router;

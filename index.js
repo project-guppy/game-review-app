@@ -17,7 +17,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use("/games", gameApi);
+app.use("/api/v1/games", gameApi);
 app.use("/users", userRoutes);
 
 app.listen(3003, () => {
