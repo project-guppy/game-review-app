@@ -1,0 +1,19 @@
+{
+  "genres": ["Shooter", "Arcade"],
+  "involved_companies": null,
+  "screenshots": null,
+  "_id": "6048a7954571e3a20cdec180",
+  "id": "140204",
+  "cover": "https://images.igdb.com/igdb/image/upload/t_cover_big/co2jc6.jpg",
+  "name": "BroodStar",
+  "rating": 98,
+  "release_dates": [
+    {
+      "_id": "6048a7954571e3a20cdec181",
+      "timestamp": 1601424000,
+      "human": "Sep 30, 2020"
+    }
+  ],
+  "summary": "BroodStar is a classic arcade shmup with roguelike elements. Battle your way through hordes of enemy creatures, collecting upgrades and fighting terrifying bosses on a quest to destroy the living planet, the BroodStar.",
+  "__v": 0
+}
