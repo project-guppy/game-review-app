@@ -1,23 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import GameDetail from "./GameDetail";
 
-import { Card, Image, Descriptions, Rate } from "antd";
+import "./GameDetailPage.css";
 
-const GameDetailPage = ({ game }) => {
+const GameDetailPage = () => {
+  const { id } = useParams();
+  const [game, setGame] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+  const [reviews, setReviews] = useState();
+  const [isReviewedByUser, setIsReviewedByUser] = useState(false);
+
+  const addReview = (reviewObj) => {
+    setReviews([...reviews, reviewObj]);
+    setIsReviewedByUser(true);
+  };
+
+  useEffect(() => {
+    const updateReviews = async () => {
+      await fetch(`http://localhost:3003/api/v1/games/${id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify([reviews]),
+      });
+    };
+    console.log("review");
+    if (!isLoading) updateReviews();
+  }, [reviews]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const fetchGame = async () => {
+      const gameObj = await fetch(
+        `http://localhost:3003/api/v1/games?id=${id}`
+      ).then((res) => res.json());
+      console.log("here", gameObj[0]);
+      setGame(gameObj[0]);
+      setReviews(gameObj[0].reviews);
+      setIsLoading(false);
+    };
+    console.log("fetching");
+    fetchGame();
+  }, [isReviewedByUser]);
+
   return (
-    <div className="gameDetailWrapper">
-      <Card title={game.name}>
-        <Image src={game.cover} width={200} />
-        <Rate disabled defaultValue={game.rating / 20} />
-        <Descriptions>
-          <Descriptions.Item label="Release Date">
-            {game.release_dates[0].human}
-          </Descriptions.Item>
-          <Descriptions.Item label="Genres">
-            {game.genres.join(", ")}
-          </Descriptions.Item>
-        </Descriptions>
-        <p>{game.summary}</p>
-      </Card>
-    </div>
+    <>
+      {isLoading ? (
+        <p>loading</p>
+      ) : (
+        <GameDetail
+          game={game}
+          addReviewHandler={addReview}
+          userReviewed={isReviewedByUser}
+        />
+      )}
+    </>
   );
 };
+
+export default GameDetailPage;
