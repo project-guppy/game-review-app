@@ -8,7 +8,7 @@ gameApi.get("/", async (req, res) => {
   await Game.find(
     req.query,
     null,
-    { sort: { rating: -1 }, limit: 20 },
+    { sort: { rating: -1 }, limit: 21 },
     (err, obj) => {
       res.status(200).json(obj);
     }
