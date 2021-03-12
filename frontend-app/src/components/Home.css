@@ -10,3 +10,13 @@
     flex-wrap: wrap;
     
 }
+
+.searchBar{
+    font-family: 'Shippori Mincho B1', serif;
+    word-wrap: normal;
+    display: flex;
+    color: blue;
+    align-content: center;
+    justify-content: center;
+   
+}
