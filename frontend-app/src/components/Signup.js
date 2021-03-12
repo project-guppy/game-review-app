@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
+import { useHistory } from 'react-router-dom';
 
 const layout = {
     labelCol: {
@@ -28,6 +29,7 @@ const SignUp = () => {
 
 const [username, setUsername] = useState();
 const [password, setPassword] = useState();
+const history = useHistory();
 
 const signUpHandler = async(event) => {
     event.preventDefault();
@@ -38,6 +40,7 @@ const signUpHandler = async(event) => {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({username, password})
     })
+    history.push("/");
 }
 
 const usernameChangeHandler = (event) => {
