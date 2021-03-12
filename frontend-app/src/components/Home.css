@@ -1,3 +1,13 @@
-.gupGrid{
-    display: block;
+@import '~antd/dist/antd.css';
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap');
+
+.cardWrapper{
+    font-family: 'Shippori Mincho B1', serif;
+    font-style: oblique;
+    word-wrap: normal;
+    padding: 50px;
+    display: flex;
+    color: blue;
+    flex-wrap: wrap;
+    
 }
