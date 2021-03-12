@@ -24,6 +24,13 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/about" component={About} />
+        </Switch>
+
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/about" component={About} />
           <Route path="/game/:id">
             <GameDetailPage game={testGame} />
           </Route>

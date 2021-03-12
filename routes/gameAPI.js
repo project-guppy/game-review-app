@@ -10,9 +10,7 @@ gameApi.get("/", async (req, res) => {
     null,
     { sort: { rating: -1 }, limit: 20 },
     (err, obj) => {
-      res.writeHead(200, { "Content-Type": "application/json" });
-      res.write(JSON.stringify(obj));
-      res.send();
+      res.status(200).json(obj);
     }
   );
   gameApi.put("/:id", (req, res) => {
