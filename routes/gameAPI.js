@@ -13,6 +13,19 @@ gameApi.get("/", async (req, res) => {
       res.status(200).json(obj);
     }
   );
+  gameApi.put("/:id", (req, res) => {
+    console.log(req.body);
+    Game.updateOne(
+      { id: req.params.id },
+      { reviews: req.body[0] },
+      {},
+      (err, obj) => {
+        if (err) console.log(error);
+        else console.log("success");
+        res.send({ status: 200 });
+      }
+    );
+  });
 });
 
 module.exports = gameApi;

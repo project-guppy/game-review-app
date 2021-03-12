@@ -9,7 +9,7 @@ mongoose.connect(process.env.DATABASE_URI, {
   useUnifiedTopology: true,
 });
 
-Game.insertMany(igdbGames)
+Game.insertMany(igdbGames.data)
   .then(() => {
     console.log("success");
     process.exit();

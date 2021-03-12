@@ -2,11 +2,11 @@ import React from "react";
 import { Comment, Rate } from "antd";
 const Review = ({ review }) => {
   const contentComponent = (
-    <ReviewContent text={review.text} rating={review.rating} />
+    <ReviewContent text={review.reviewText} rating={review.overall} />
   );
   return (
     <Comment
-      author={review.username}
+      author={review.reviewerName}
       avatar={review.profilePic}
       content={contentComponent}
     />
@@ -16,7 +16,7 @@ const Review = ({ review }) => {
 const ReviewContent = ({ text, rating }) => {
   return (
     <>
-      <Rate disabled defaultValue={rating / 20} />
+      <Rate disabled defaultValue={rating} />
       <p>{text}</p>
     </>
   );
