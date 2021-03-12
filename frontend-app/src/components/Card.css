@@ -9,10 +9,18 @@
     hyphens: auto;
     font-weight: bolder;
 }
+.homePageCard .ant-card-body{
+    padding: 15px;
+    width: auto;
+    height: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
 .homePageCard .ant-card-head :hover{
     font-style: italic;
     color: red;
 }
-.homePageCard.ant-card-body :hover{
+.homePageCard .ant-card-body :hover{
     font-weight: bold;
 }
