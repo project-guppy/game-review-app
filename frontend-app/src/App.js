@@ -29,7 +29,7 @@ function App() {
           </Route>
         </Switch>
 
-        <div>
+        <div className="footer-wrap">
           <Footer />
           <link
             rel="stylesheet"
