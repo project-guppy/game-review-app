@@ -5,7 +5,8 @@ require("dotenv").config();
 
 const gameApi = require("./routes/gameAPI.js");
 const userRoutes = require("./routes/userRoutes");
-const cors= require('cors');
+const cors = require("cors");
+
 
 mongoose.connect(process.env.DATABASE_URI, {
   useNewUrlParser: true,
@@ -14,7 +15,8 @@ mongoose.connect(process.env.DATABASE_URI, {
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use("/api/v1/games", gameApi);
