@@ -27,7 +27,7 @@ const GameDetailPage = () => {
     };
     console.log("review");
     if (!isLoading) updateReviews();
-  }, [reviews]);
+  }, []);
 
   useEffect(() => {
     setIsLoading(true);
@@ -37,12 +37,12 @@ const GameDetailPage = () => {
       ).then((res) => res.json());
       console.log("here", gameObj[0]);
       setGame(gameObj[0]);
-      setReviews(gameObj[0].reviews);
+      setReviews([...gameObj[0].reviews]);
       setIsLoading(false);
     };
     console.log("fetching");
     fetchGame();
-  }, [isReviewedByUser]);
+  }, []);
 
   return (
     <>
@@ -50,7 +50,6 @@ const GameDetailPage = () => {
         <p>loading</p>
       ) : (
         <>
-          
           <GameDetail
             game={game}
             addReviewHandler={addReview}
