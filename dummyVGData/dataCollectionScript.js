@@ -5,6 +5,8 @@ const fs = require("fs");
 require("dotenv").config();
 require("fs");
 
+const dummyReviews = require("./reviews_Video_Games_5.json");
+
 const getAuthToken = async () => {
   const baseurl = "https://id.twitch.tv/oauth2/";
   const endpoint = "token";
@@ -30,11 +32,17 @@ const getVideoGameData = async (numberOfEntries) => {
       Authorization: `Bearer ${await getAuthToken()}`,
       Accept: "application/json",
     },
-    body: `fields name,rating,cover.url,genres.name,screenshots.url,summary,involved_companies.company.name,release_dates.*;limit 200;sort release_dates.date desc;where rating >= 80;`,
+    body: `fields name,rating,cover.url,follows,hypes,genres.name,screenshots.url,summary,involved_companies.company.name,release_dates.*;where release_dates.platform = 48 & hypes > 20;limit 200;`,
   })
     .then((res) => res.json())
     .then((data) =>
       data.map((game) => {
+        console.log(
+          game.rating,
+          game.follows,
+          game.hypes,
+          game.aggregated_rating_count
+        );
         return {
           ...game,
           cover:
@@ -60,9 +68,14 @@ const getVideoGameData = async (numberOfEntries) => {
                   human: release.human,
                 }))
               : null,
+          reviews: insertDummyReviews(),
+          hypes: game.hypes,
+          follows: game.follows,
+          count: game.aggregated_rating_count,
         };
       })
     );
+
   return data;
 };
 
@@ -84,6 +97,20 @@ const writeToFile = async () => {
 
 const reformatImgUrl = (url, from = "t_thumb", to) => {
   return "https:" + url.replace(from, to);
+};
+
+const insertDummyReviews = () => {
+  const numberOfReviews = Math.floor(Math.random() * 20 + 1);
+  const reviewList = [];
+  let i = 0;
+  while (i < numberOfReviews) {
+    reviewList.push(
+      dummyReviews[Math.floor(Math.random() * dummyReviews.length)]
+    );
+    i++;
+  }
+
+  return reviewList;
 };
 
 // const getGameImage = async (game_id) => {

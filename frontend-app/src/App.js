@@ -24,7 +24,7 @@ function App() {
           <Route exact path="/login" component={LoginPage} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/detail">
+          <Route path="/game/:id">
             <GameDetailPage game={testGame} />
           </Route>
         </Switch>

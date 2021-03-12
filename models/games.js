@@ -10,6 +10,7 @@ const Game = new mongoose.Schema({
   release_dates: [{ timestamp: Number, human: String }],
   screenshots: [{ type: String }],
   summary: String,
+  reviews: Array,
 });
 
 module.exports = mongoose.model("games", Game);
