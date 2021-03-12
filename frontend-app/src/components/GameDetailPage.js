@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import GameDetail from "./GameDetail";
 
 import "./GameDetailPage.css";
+import Loading from "./Loading";
 
 const GameDetailPage = () => {
   const { id } = useParams();
@@ -47,7 +48,7 @@ const GameDetailPage = () => {
   return (
     <>
       {isLoading ? (
-        <p>loading</p>
+        <Loading />
       ) : (
         <>
           <GameDetail

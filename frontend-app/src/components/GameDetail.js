@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Image, Descriptions, Rate, List } from "antd";
+import { Card, Image, Descriptions, Rate, List, Carousel } from "antd";
 import ReviewCompose from "./ReviewCompose";
 import BreadcrumbsNav from "./BreadcrumbsNav";
 import Review from "./Review";
@@ -28,6 +28,15 @@ const GameDetail = ({ game, addReviewHandler, userReviewed, reviews }) => {
             <p>{game.summary}</p>
           </div>
         </div>
+        <h3>ScreenShots</h3>
+        <div className="screenshots">
+          {game.screenshots.map((url) => (
+            <div key={url}>
+              <Image src={url} alt="" />
+            </div>
+          ))}
+        </div>
+        <h3>Reviews</h3>
         {userReviewed ? (
           <p>Thank you reviewing :-)</p>
         ) : (
