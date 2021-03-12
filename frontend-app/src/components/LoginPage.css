@@ -1,6 +1,20 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap');
+
 .loginWrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    margin-right: 150px;
+    
+}
+.liPageWrap{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Shippori Mincho B1', serif;
+    text-align: center;
+    padding-bottom: 200px;
+    padding-top: 150px ;
 }

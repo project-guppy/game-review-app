@@ -2,10 +2,14 @@
 
 .App{
     height: 90vh;
+    display: block;
 }
 
 .appNavbar{
     display: block;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 50px;
 }
 .switches{
     display: block;
@@ -14,4 +18,11 @@
     display: flex;
     
     margin-top: 50px;
+}
+.footer-wrap{
+    padding-top: 10px;
+
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }

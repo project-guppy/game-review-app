@@ -7,8 +7,12 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    font-weight: bolder;
 }
-.ant-card-head: :hover{
+.ant-card-head :hover{
     font-style: italic;
     color: red;
+}
+.ant-card-body :hover{
+    font-weight: bold;
 }

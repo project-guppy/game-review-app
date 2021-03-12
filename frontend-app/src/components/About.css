@@ -1,5 +1,19 @@
-.aboutWrapper{
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap');
+
+.signUpWrapper{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    margin-right: 150px;
+    
+}
+.aboutWrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Shippori Mincho B1', serif;
+    text-align: center;
+    padding-bottom: 300px;
+    padding-top: 150px ;
 }

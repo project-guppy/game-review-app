@@ -1,3 +1,4 @@
+import './About.css'
 const AboutPage = () => {
     return (
         <div className="aboutWrapper">

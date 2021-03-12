@@ -8,9 +8,9 @@ const GuppyCard = (props) => {
       <img src={props.game.cover} alt="cover" />
       <p>{props.game.genres}</p>
       <p>{props.game.involved_companies}</p>
-      <p>{props.game.rating}</p>
+      <p>Rating: {props.game.rating}</p>
      
-      <Rate allowHalf defaultValue={60/20}/>
+      <Rate allowHalf defaultValue={3}/>
       
 
 
