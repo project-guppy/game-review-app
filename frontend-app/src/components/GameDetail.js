@@ -1,12 +1,14 @@
 import React from "react";
 import { Card, Image, Descriptions, Rate, List } from "antd";
 import ReviewCompose from "./ReviewCompose";
+import BreadcrumbsNav from "./BreadcrumbsNav";
 import Review from "./Review";
 
-const GameDetail = ({ game, addReviewHandler, userReviewed }) => {
+const GameDetail = ({ game, addReviewHandler, userReviewed, reviews }) => {
   console.log("game", game);
   return (
     <div className="gameDetailPageWrapper">
+      <BreadcrumbsNav gameTitle={game.name} />
       <Card className>
         <div className="gameDetailWrapper">
           <div className="gameDetailSide">
@@ -43,9 +45,9 @@ const GameDetail = ({ game, addReviewHandler, userReviewed }) => {
         )}
         <List
           className="comment-list"
-          header={`${game.reviews.length} reviews`}
+          header={`${reviews.length} reviews`}
           itemLayout="horizontal"
-          dataSource={game.reviews.map((review) => (
+          dataSource={reviews.map((review) => (
             <Review key={review.asin} review={review} />
           ))}
           renderItem={(review) => <li>{review}</li>}
