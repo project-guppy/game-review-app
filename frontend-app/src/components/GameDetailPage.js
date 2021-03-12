@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+
 import GameDetail from "./GameDetail";
 
 import "./GameDetailPage.css";
@@ -48,11 +49,14 @@ const GameDetailPage = () => {
       {isLoading ? (
         <p>loading</p>
       ) : (
-        <GameDetail
-          game={game}
-          addReviewHandler={addReview}
-          userReviewed={isReviewedByUser}
-        />
+        <>
+          
+          <GameDetail
+            game={game}
+            addReviewHandler={addReview}
+            userReviewed={isReviewedByUser}
+          />
+        </>
       )}
     </>
   );

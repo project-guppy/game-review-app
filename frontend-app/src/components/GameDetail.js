@@ -1,12 +1,14 @@
 import React from "react";
 import { Card, Image, Descriptions, Rate, List } from "antd";
 import ReviewCompose from "./ReviewCompose";
+import BreadcrumbsNav from "./BreadcrumbsNav";
 import Review from "./Review";
 
 const GameDetail = ({ game, addReviewHandler, userReviewed }) => {
   console.log("game", game);
   return (
     <div className="gameDetailPageWrapper">
+      <BreadcrumbsNav gameTitle={game.name} />
       <Card className>
         <div className="gameDetailWrapper">
           <div className="gameDetailSide">
