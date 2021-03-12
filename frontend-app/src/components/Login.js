@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
+import { useHistory } from 'react-router-dom';
 
 const layout = {
     labelCol: {
@@ -27,18 +28,27 @@ const LogIn = () => {
 
 const [username, setLoginUsername] = useState();
 const [password, setLoginPassword] = useState();
+const history = useHistory();
 
 const loginHandler = async(event) => {
     event.preventDefault();
     console.log(username);
     console.log(password);
-    await fetch("http://localhost:3003/users/login", {
+    const loginValidation = await fetch("http://localhost:3003/users/login", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({username, password})
-    })
-    console.log(username);
-    console.log(password);
+    }).then(res=>res.json())
+
+    console.log(loginValidation);
+   
+    if(loginValidation.login){
+        console.log("You have logged in!");
+        history.push("/");
+    }
+    else{
+        console.log("You are a loser and have failed");
+    }
 }
 
 const usernameCheckHandler = (event) => {

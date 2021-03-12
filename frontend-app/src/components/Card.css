@@ -1,5 +1,5 @@
 @import '~antd/dist/antd.css';
-.ant-card-head{
+.homePageCard.ant-card-head{
     padding: 15px;
     width: auto;
     height: auto;
@@ -9,10 +9,18 @@
     hyphens: auto;
     font-weight: bolder;
 }
-.ant-card-head :hover{
+.homePageCard .ant-card-body{
+    padding: 15px;
+    width: auto;
+    height: auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+.homePageCard .ant-card-head :hover{
     font-style: italic;
     color: red;
 }
-.ant-card-body :hover{
+.homePageCard .ant-card-body :hover{
     font-weight: bold;
 }

@@ -1,30 +1,51 @@
 import GuppyCard from "./Card";
-import { useEffect, useState } from "react";
-import "./Home.css";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import './Home.css'
+import { Input } from 'antd';
+
+const { Search } = Input;
+
+
 
 const HomePage = () => {
-  const [games, setGames] = useState([]);
-  useEffect(() => {
-    const getGames = async () => {
-      const data = await fetch(
-        "http://localhost:3003/api/v1/games"
-      ).then((res) => res.json());
-      console.log();
-      setGames(data);
-    };
-    getGames();
-  }, []);
+    const [searchInput, setSearchInput] = useState()
+    const [games, setGames] = useState([])
+    
+    useEffect(async () => {
+        const data = await fetch("http://localhost:3003/api/v1/games").then((res) => res.json())
+        console.log()
+        setGames(data)
+    }, [])
+    const cards = games.map((game) => {
+        return (<GuppyCard key={game.id} game={game} />
+        )
+    });
+    
+    console.log(cards)
 
-  const cards = games.map((game) => {
+    const onChangeHandler = (event) => {
+        setSearchInput(event.target.value)
+    }
+
+    const onSearchHandler = async() => {
+        const data = await fetch(`http://localhost:3003/api/v1/games?name=${searchInput}`).then((res) => res.json())
+        setGames(data)
+
+    }
+
     return (
-      <Link to={`/game/${game.id}`}>
-        <GuppyCard key={game.id} game={game} />
-      </Link>
-    );
-  });
-  console.log(cards);
+        <div className="homePageWrapper">
 
-  return <div className="cardWrapper">{cards}</div>;
-};
+            <div className="searchBar">
+                <Search value={searchInput} onChange={onChangeHandler} placeholder="input search text" onSearch={onSearchHandler} style={{ width: 200 }} />
+            </div>
+
+            <div className="cardWrapper">
+                 {cards.length!=0?cards: <p>No game found, sorry.</p>}
+            </div>
+
+        </div>
+    )
+}
+
 export default HomePage;
