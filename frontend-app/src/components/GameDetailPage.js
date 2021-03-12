@@ -55,6 +55,7 @@ const GameDetailPage = () => {
             game={game}
             addReviewHandler={addReview}
             userReviewed={isReviewedByUser}
+            reviews={reviews}
           />
         </>
       )}
