@@ -7,6 +7,7 @@ const gameApi = require("./routes/gameAPI.js");
 const userRoutes = require("./routes/userRoutes");
 const cors = require("cors");
 
+
 mongoose.connect(process.env.DATABASE_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -14,6 +15,7 @@ mongoose.connect(process.env.DATABASE_URI, {
 
 const app = express();
 app.use(cors());
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
