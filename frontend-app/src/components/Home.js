@@ -21,7 +21,6 @@ const HomePage = () => {
     setIsLoading(false);
   }, []);
   const cards = games.map((game) => {
-    git;
     return (
       <Link to={`/game/${game.id}`}>
         <GuppyCard key={game.id} game={game} />
