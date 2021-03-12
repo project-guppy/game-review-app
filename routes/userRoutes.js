@@ -20,6 +20,17 @@ router.post("/signup", (req, res) => {
   })
 })
 
+router.get("/login", (req, res) => {
+  GuppyUser.find({username:req.body.username, password:req.body.password}, (err, obj) => {
+    if(err){
+      console.log(err);
+      return
+    }
+    console.log(obj);
+    console.log("Success");
+  })
+})
+
 module.exports = router;
 
 

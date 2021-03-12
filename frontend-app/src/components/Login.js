@@ -25,8 +25,29 @@ const LogIn = () => {
         console.log('Failed:', errorInfo);
     };
 
-const [loginUsername, setLoginUsername] = useState();
-const [loginPassword, setLoginPassword] = useState();
+const [username, setLoginUsername] = useState();
+const [password, setLoginPassword] = useState();
+
+const loginHandler = async(event) => {
+    event.preventDefault();
+    console.log(username);
+    console.log(password);
+    await fetch("http://localhost:3003/users/login", {
+        method: "GET",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({username, password})
+    })
+    console.log({username});
+    console.log({password});
+}
+
+const usernameCheckHandler = (event) => {
+    setLoginUsername(event.target.value);
+}
+
+const passwordCheckHandler = (event) => {
+    setLoginPassword(event.target.value);
+}
 
     return (
         <Form
@@ -48,7 +69,7 @@ const [loginPassword, setLoginPassword] = useState();
                     },
                 ]}
             >
-                <Input />
+                <Input value={username} onChange={usernameCheckHandler}/>
             </Form.Item>
 
             <Form.Item
@@ -61,7 +82,7 @@ const [loginPassword, setLoginPassword] = useState();
                     },
                 ]}
             >
-                <Input.Password />
+                <Input.Password value={password} onChange={passwordCheckHandler}/>
             </Form.Item>
 
             <Form.Item {...tailLayout} name="remember" valuePropName="checked">
@@ -69,7 +90,7 @@ const [loginPassword, setLoginPassword] = useState();
             </Form.Item>
 
             <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
+                <Button onClick={loginHandler} type="primary" htmlType="submit">
                     Submit
           </Button>
             </Form.Item>
