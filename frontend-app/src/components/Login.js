@@ -33,12 +33,12 @@ const loginHandler = async(event) => {
     console.log(username);
     console.log(password);
     await fetch("http://localhost:3003/users/login", {
-        method: "GET",
+        method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({username, password})
     })
-    console.log({username});
-    console.log({password});
+    console.log(username);
+    console.log(password);
 }
 
 const usernameCheckHandler = (event) => {
